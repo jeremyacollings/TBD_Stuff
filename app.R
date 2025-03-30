@@ -14,7 +14,7 @@ cap_data <- cap_data %>% pivot_longer(cols = 4:49,
   mutate(year = gsub("X", "", year))
 
 ui <- fluidPage(
-  titlePanel("Bird Population Analysis"),
+  titlePanel("Tropical Bird CJS Model"),
   sidebarLayout(
     sidebarPanel(
       selectInput(
@@ -59,7 +59,7 @@ server <- function(input, output) {
               "95% CI: (", round(lower, 3), ", ", round(upper, 3), ")"
             )) %>%
       layout(
-        title = paste("Survival Rate:", input$selected_species),
+        title = paste("Annual Apparent Survival:", input$selected_species),
         yaxis = list(range = c(0, 1))
       )
   })
