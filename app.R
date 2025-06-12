@@ -16,7 +16,8 @@ cap_data <- cap_data %>% pivot_longer(cols = 4:49,
 
 bird_data <- bird_data %>%
   mutate(sp = sp_table$sp[s], 
-         si = si_table$si[si])
+         si = si_table$si[si], 
+         ti = cap_data$year[ti])
 
 all_sites <- unique(bird_data$si)
 site_colors <- setNames(
